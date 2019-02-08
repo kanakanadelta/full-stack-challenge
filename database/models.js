@@ -33,7 +33,7 @@ const Users = connection.define(
   { timestamps: false }
 );
 
-const Feedback = connection.define(
+const Feedbacks = connection.define(
   'feedback', 
   {
     id: {
@@ -56,8 +56,9 @@ const Feedback = connection.define(
 //   }
 // })
 
-connection.sync({ force: false }); //remove force: false after initial schema is finalized
+// connection.sync({ force: false }); //remove force: false after initial schema is finalized
 
 module.exports = {
-  Users
+  Users,
+  Feedbacks
 }

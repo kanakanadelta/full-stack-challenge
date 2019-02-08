@@ -3,7 +3,8 @@ const usersData = require('../assets/usersData.json');
 const Sequelize = require('sequelize');
 
 const {
-  Users
+  Users,
+  Feedbacks
 } = require('./models.js');
 
 const insertUsers = (usersData) => {

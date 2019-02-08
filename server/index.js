@@ -6,6 +6,7 @@ const path = require('path');
 const PORT = 9001;
 
 const db = require('../database');
+const router = require('./router.js')
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(parser.urlencoded({
 }));
 // The "extended" syntax allows for rich objects and arrays to be encoded into the URL-encoded format
 // allowing for a JSON-like experience with URL-encoded.
+app.use('/api', router);
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 

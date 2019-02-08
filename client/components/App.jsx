@@ -6,13 +6,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'login'
+      view: 'employees'
+    }
+    this.renderView = this.renderView.bind(this);
+  }
+
+  renderView() {
+    if (this.state.view === 'login') {
+      return <Login />;
+    } else if (this.state.view === 'employees') {
+      return <EmployeeView />;
     }
   }
 
   render() {
     return (
-      <Login />
+      <div id="body">
+        <EmployeeView/>
+      </div>
     )
   }
 }
