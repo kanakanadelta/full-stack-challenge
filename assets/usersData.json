@@ -1,0 +1,176 @@
+[{
+  "id": 1,
+  "admin": true,
+  "username": "credgrove0",
+  "password": "Khaki",
+  "first_name": "Camella",
+  "last_name": "Redgrove"
+}, {
+  "id": 2,
+  "admin": true,
+  "username": "dlashley1",
+  "password": "Yellow",
+  "first_name": "Demetrius",
+  "last_name": "Lashley"
+}, {
+  "id": 3,
+  "admin": true,
+  "username": "tkeitch2",
+  "password": "Blue",
+  "first_name": "Trudi",
+  "last_name": "Keitch"
+}, {
+  "id": 4,
+  "admin": true,
+  "username": "eemons3",
+  "password": "Khaki",
+  "first_name": "Estella",
+  "last_name": "Emons"
+}, {
+  "id": 5,
+  "admin": false,
+  "username": "mmillins4",
+  "password": "Puce",
+  "first_name": "Marietta",
+  "last_name": "Millins"
+}, {
+  "id": 6,
+  "admin": false,
+  "username": "eashpole5",
+  "password": "Pink",
+  "first_name": "Elmira",
+  "last_name": "Ashpole"
+}, {
+  "id": 7,
+  "admin": false,
+  "username": "hillingworth6",
+  "password": "Indigo",
+  "first_name": "Hyacinthia",
+  "last_name": "Illingworth"
+}, {
+  "id": 8,
+  "admin": false,
+  "username": "drepper7",
+  "password": "Yellow",
+  "first_name": "Desirae",
+  "last_name": "Repper"
+}, {
+  "id": 9,
+  "admin": false,
+  "username": "ekirkam8",
+  "password": "Purple",
+  "first_name": "Elvira",
+  "last_name": "Kirkam"
+}, {
+  "id": 10,
+  "admin": false,
+  "username": "osanders9",
+  "password": "Turquoise",
+  "first_name": "Olivie",
+  "last_name": "Sanders"
+}, {
+  "id": 11,
+  "admin": false,
+  "username": "roakwella",
+  "password": "Crimson",
+  "first_name": "Regine",
+  "last_name": "Oakwell"
+}, {
+  "id": 12,
+  "admin": false,
+  "username": "gcoultardb",
+  "password": "Orange",
+  "first_name": "Godfree",
+  "last_name": "Coultard"
+}, {
+  "id": 13,
+  "admin": false,
+  "username": "gduttc",
+  "password": "Violet",
+  "first_name": "Goober",
+  "last_name": "Dutt"
+}, {
+  "id": 14,
+  "admin": false,
+  "username": "mfolland",
+  "password": "Teal",
+  "first_name": "Marylin",
+  "last_name": "Follan"
+}, {
+  "id": 15,
+  "admin": false,
+  "username": "ddeeleye",
+  "password": "Aquamarine",
+  "first_name": "Dyanne",
+  "last_name": "Deeley"
+}, {
+  "id": 16,
+  "admin": false,
+  "username": "ccollissonf",
+  "password": "Violet",
+  "first_name": "Christa",
+  "last_name": "Collisson"
+}, {
+  "id": 17,
+  "admin": false,
+  "username": "sbassilg",
+  "password": "Khaki",
+  "first_name": "Shirl",
+  "last_name": "Bassil"
+}, {
+  "id": 18,
+  "admin": false,
+  "username": "rvallerh",
+  "password": "Purple",
+  "first_name": "Rhona",
+  "last_name": "Valler"
+}, {
+  "id": 19,
+  "admin": false,
+  "username": "celeyi",
+  "password": "Violet",
+  "first_name": "Cordie",
+  "last_name": "Eley"
+}, {
+  "id": 20,
+  "admin": false,
+  "username": "tingersonj",
+  "password": "Goldenrod",
+  "first_name": "Townie",
+  "last_name": "Ingerson"
+}, {
+  "id": 21,
+  "admin": false,
+  "username": "crontreek",
+  "password": "Turquoise",
+  "first_name": "Chiquita",
+  "last_name": "Rontree"
+}, {
+  "id": 22,
+  "admin": false,
+  "username": "afriedankl",
+  "password": "Violet",
+  "first_name": "Addy",
+  "last_name": "Friedank"
+}, {
+  "id": 23,
+  "admin": false,
+  "username": "cabsalomm",
+  "password": "Pink",
+  "first_name": "Cati",
+  "last_name": "Absalom"
+}, {
+  "id": 24,
+  "admin": false,
+  "username": "lrudolphn",
+  "password": "Aquamarine",
+  "first_name": "Lorry",
+  "last_name": "Rudolph"
+}, {
+  "id": 25,
+  "admin": false,
+  "username": "trisebarero",
+  "password": "Khaki",
+  "first_name": "Terri",
+  "last_name": "Risebarer"
+}]
