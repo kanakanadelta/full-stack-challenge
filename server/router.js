@@ -15,6 +15,7 @@ router
 
 router
   .route('/review')
+  .get(controller.review.get)
   .post(controller.review.post)
 
 module.exports = router;

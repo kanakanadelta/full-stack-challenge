@@ -67,15 +67,15 @@ const Reviews = connection.define(
       type: Sequelize.STRING,
       allowNull: false
     },
-    userReviewed: {
+    user_reviewed: {
       type: Sequelize.INTEGER,
-      references: 'users',
-      referencesKey: 'id'
+      model: 'users',
+      key: 'id'
     },
     reviewer: {
       type: Sequelize.INTEGER,
-      references: 'users',
-      referencesKey: 'id'
+      model: 'users',
+      key: 'id'
     }
   },
   { timestamps: false }
@@ -87,7 +87,10 @@ Reviews.belongsTo(Users);
 Feedbacks.belongsTo(Users);
 
 
-// connection.sync({ force: false }); //remove force: false after initial schema is finalized
+connection
+  .sync({ force: false })
+  .then(() => console.log("Comment: sequelize models synced with PostgreSQL"))
+  .catch(err => console.error(err));; //remove force: false after initial schema is finalized
 
 module.exports = {
   Users,

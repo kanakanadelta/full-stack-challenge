@@ -45,20 +45,39 @@ module.exports = {
   review: {
     post: (req, res) => {
       console.log('in POST');
-      console.log(req.query)
-      const {comment, userReviewed, reviewer} = req.query;
+      console.log('req.body:', req.body)
+      const {comment, user_reviewed, reviewer} = req.body;
       Reviews
         .create({
           comment: comment,
-          userReviewed: userReviewed,
+          user_reviewed: user_reviewed,
           reviewer: reviewer
         })
         .then(review=> {
           res.status(201).send(review);
         })
         .catch(err=> {
+          console.log('error making POST')
           res.status(404).send(err);
         })
+    },
+    get: (req, res) =>{
+      console.log('retrieving reviews', req.query)
+      const {user_id} = req.query;
+      Reviews
+        .findAll({
+          where: {
+            user_reviewed: user_id
+          }
+        })
+        .then(reviews => {
+          if (reviews) {
+            res.status(200).send(reviews)
+          } else {
+            res.status(404).send('review retrieval error');
+          }
+        })
+        .catch(err=> res.status(404).send(err));
     }
   },
   getOne: {

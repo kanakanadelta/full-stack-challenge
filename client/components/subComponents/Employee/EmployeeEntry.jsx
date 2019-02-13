@@ -9,18 +9,15 @@ const EmployeeEntry = props => {
       <div 
         className="employee-name"
         onClick={()=> {
-          console.log(`hello ${user.id}`)
-          props.changeView(user.id)
+          console.log(`hello ${props.user.id}`)
+          props.changeView(props.user.id)
         }}
-        id={user.id}
+        id={props.user.id}
       >
         {props.user.last_name}, {props.user.first_name}
       </div>
       <div>
         <div>username:{props.user.username}</div>
-        <div>
-          Reviews:
-        </div>
       </div>
     </Container>
   )
