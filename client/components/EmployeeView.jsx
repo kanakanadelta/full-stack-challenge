@@ -3,14 +3,19 @@ import Axios from 'axios';
 
 // react components
 import EmployeeEntry from './subComponents/Employee/EmployeeEntry';
+import EmployeeDetail from './subComponents/Employee/EmployeeDetail';
 
 class EmployeeView extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
+      userData: this.props.userData,
       view: 'employees',
+      loading: true,
       users: []
     }
+    this.changeView = this.changeView.bind(this);
   }
 
   componentDidMount() {
@@ -21,12 +26,16 @@ class EmployeeView extends Component {
     console.log(this.state.users)
   }
 
-  
+  changeView(option) {
+    console.log(`changing view to user: ${option}`)
+    this.setState({
+      view: option
+    })
+  }
+
   getUsers() {
     Axios
-      .get('/api/allUsers', {
-        // params: {}
-      })
+      .get('/api/allUsers')
       .then(({data}) =>{
         this.setState({
           users: data,
@@ -41,8 +50,6 @@ class EmployeeView extends Component {
       })
   }
 
-
-
   renderUsers() {
     if (!!this.state.loading) {
       return <div>Loading...</div>
@@ -55,6 +62,7 @@ class EmployeeView extends Component {
               <EmployeeEntry
                 key={user.id}
                 user={user}
+                changeView={this.changeView}
               />
             )
           })}
@@ -63,12 +71,33 @@ class EmployeeView extends Component {
     }
   }
 
+  renderView(option) {
+    if (this.state.view === "employees") {
+      return (
+        <div 
+        className="employee-list"
+        >
+        Employees:
+          {this.renderUsers()}
+        </div>
+      )
+    } else {
+      return (
+        <EmployeeDetail 
+          users={this.state.users}
+          userId={this.state.view}
+          changeView={this.changeView}
+          userData={this.state.userData}
+        />
+      )
+    }
+  }
 
   render() {
     return(
       <div>
         <div>
-          Hello {this.props.currentUser}!
+          Hello {this.props.currentUser}.
         </div>
         <div>
           <a 
@@ -82,14 +111,9 @@ class EmployeeView extends Component {
         </div>
         <br/>
         <div> 
-          Employees: 
+          {this.renderView()}
         </div>
-
-        <div className="employee-list">
-          {this.renderUsers()}
-        </div>
-
-      {/* end component */}
+        {/* End Component */}
       </div>
     )
   }

@@ -91,6 +91,7 @@ class App extends Component {
     } else if (this.state.view === 'employee') {
       return <EmployeeView 
               currentUser={this.state.currentUser}
+              userData={this.state.userData}
               logOut={this.logOut}
               users={this.state.users} //pass down users to child component
               loading={this.state.loading}

@@ -9,8 +9,8 @@ const EmployeeEntry = props => {
       <div 
         className="employee-name"
         onClick={()=> {
-          console.log(`hello ${props.user.id}`)
-          props.changeView(props.user.id)
+          props.changeView(props.user.id-1)
+          console.log(`changing view ${props.user.id}`)
         }}
         id={props.user.id}
       >
@@ -18,6 +18,14 @@ const EmployeeEntry = props => {
       </div>
       <div>
         <div>username:{props.user.username}</div>
+        <div>
+          <button
+            onClick={()=> {
+              props.changeView(props.user.id-1)
+              console.log(`changing view ${props.user.id}`)
+            }}
+          >View Employee</button>
+        </div>
       </div>
     </Container>
   )
