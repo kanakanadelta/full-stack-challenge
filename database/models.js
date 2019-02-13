@@ -29,7 +29,7 @@ const Users = connection.define(
       type: Sequelize.STRING,
       allowNull: false
     },
-    feedback_auth: {
+    review_auth: {
       type: Sequelize.BOOLEAN,
       allowNull: false
     }
@@ -42,27 +42,55 @@ const Feedbacks = connection.define(
   {
     id: {
       type: Sequelize.INTEGER,
+      autoIncrement: true,
       primaryKey: true,
       allowNull: false
     },
     comment: {
       type: Sequelize.STRING,
       allowNull: false
+    },
+  },
+  { timestamps: false }
+);
+
+const Reviews = connection.define(
+  'reviews', 
+  {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
+    comment: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    userReviewed: {
+      type: Sequelize.INTEGER,
+      references: 'users',
+      referencesKey: 'id'
+    },
+    reviewer: {
+      type: Sequelize.INTEGER,
+      references: 'users',
+      referencesKey: 'id'
     }
   },
   { timestamps: false }
 );
 
-// User.hasMany(Feedback, {
-//   foreignKey: {
-//     name: 'uid',
-//     allowNull: false
-//   }
-// })
+Users.hasMany(Reviews);
+Reviews.hasMany(Feedbacks);
+Reviews.belongsTo(Users);
+Feedbacks.belongsTo(Users);
+
 
 // connection.sync({ force: false }); //remove force: false after initial schema is finalized
 
 module.exports = {
   Users,
-  Feedbacks
+  Feedbacks,
+  Reviews
 }

@@ -3,6 +3,7 @@ import Axios from 'axios';
 
 // react components
 import EmployeeEntry from './subComponents/Admin/EmployeeEntry';
+import EmployeeDetail from './subComponents/Admin/EmployeeDetail';
 
 class AdminView extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class AdminView extends Component {
       loading: true,
       users: []
     }
+    this.changeView = this.changeView.bind(this);
   }
 
   componentDidMount() {
@@ -22,11 +24,16 @@ class AdminView extends Component {
     console.log(this.state.users)
   }
 
+  changeView(option) {
+    console.log(`changing view to user: ${option}`)
+    this.setState({
+      view: option
+    })
+  }
+
   getUsers() {
     Axios
-      .get('/api/allUsers', {
-        // params: {}
-      })
+      .get('/api/allUsers')
       .then(({data}) =>{
         this.setState({
           users: data,
@@ -53,10 +60,32 @@ class AdminView extends Component {
               <EmployeeEntry
                 key={user.id}
                 user={user}
+                changeView={this.changeView}
               />
             )
           })}
         </div>
+      )
+    }
+  }
+
+  renderView(option) {
+    if (this.state.view === "employees") {
+      return (
+        <div 
+        className="employee-list"
+        >
+        Employees:
+          {this.renderUsers()}
+        </div>
+      )
+    } else {
+      return (
+        <EmployeeDetail 
+          users={this.state.users}
+          userId={this.state.view}
+          changeView={this.changeView}
+        />
       )
     }
   }
@@ -79,11 +108,9 @@ class AdminView extends Component {
         </div>
         <br/>
         <div> 
-          Employees: 
+          {this.renderView()}
         </div>
-        <div className="employee-list">
-          {this.renderUsers()}
-        </div>
+        {/* End Component */}
       </div>
     )
   }

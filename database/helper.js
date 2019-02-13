@@ -4,7 +4,8 @@ const Sequelize = require('sequelize');
 
 const {
   Users,
-  Feedbacks
+  Feedbacks,
+  Reviews
 } = require('./models.js');
 
 const insertUsers = (usersData) => {
@@ -17,7 +18,7 @@ const insertUsers = (usersData) => {
       password: userData.password,
       first_name: userData.first_name,
       last_name: userData.last_name,
-      feedback_auth: userData.feedback_auth
+      review_auth: userData.review_auth
     })
     .then(user => {
       counter++;

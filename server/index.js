@@ -9,7 +9,7 @@ const cors = require('cors');
 const db = require('../database');
 const router = require('./router.js')
 
-const helper = require('../database/helper.js')
+// const helper = require('../database/helper.js')
 
 const app = express();
 

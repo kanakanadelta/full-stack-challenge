@@ -84,7 +84,6 @@ class App extends Component {
     } else if (this.state.view === 'admin') {
       return <AdminView
               currentUser={this.state.currentUser}
-              viewChange={this.changeView}
               logOut={this.logOut}
               users={this.state.users} //pass down users to child component
               loading={this.state.loading}
@@ -92,7 +91,6 @@ class App extends Component {
     } else if (this.state.view === 'employee') {
       return <EmployeeView 
               currentUser={this.state.currentUser}
-              viewChange={this.changeView}
               logOut={this.logOut}
               users={this.state.users} //pass down users to child component
               loading={this.state.loading}

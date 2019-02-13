@@ -9,5 +9,12 @@ router
   .route('/login/:username')
   .get(controller.login.get)
 
+router 
+  .route('/user/:id')
+  .get(controller.getOne.get)
+
+router
+  .route('/review')
+  .post(controller.review.post)
 
 module.exports = router;
