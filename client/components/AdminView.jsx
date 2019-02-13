@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
 
+// react components
+import EmployeeEntry from './subComponents/Admin/EmployeeEntry';
+
 class AdminView extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +28,6 @@ class AdminView extends Component {
         // params: {}
       })
       .then(({data}) =>{
-        // console.log(data)
         this.setState({
           users: data,
           loading: false
@@ -48,7 +50,10 @@ class AdminView extends Component {
           {this.state.users.map(user=>{
             return(
               //make a functional stateless component
-              <p key={user.id}>{user.first_name}</p>
+              <EmployeeEntry
+                key={user.id}
+                user={user}
+              />
             )
           })}
         </div>
@@ -59,8 +64,26 @@ class AdminView extends Component {
   render() {
     return(
       <div>
-        Hello from admin view
-        {this.renderUsers()}
+        <div>
+          Hello {this.props.currentUser}.
+        </div>
+        <div>
+          <a 
+          style={{
+            cursor: "pointer",
+            color: "blue"
+          }}
+          onClick={()=>  this.props.logOut()}>
+            Log Out
+          </a>
+        </div>
+        <br/>
+        <div> 
+          Employees: 
+        </div>
+        <div className="employee-list">
+          {this.renderUsers()}
+        </div>
       </div>
     )
   }

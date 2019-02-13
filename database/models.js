@@ -28,6 +28,10 @@ const Users = connection.define(
     last_name: {
       type: Sequelize.STRING,
       allowNull: false
+    },
+    feedback_auth: {
+      type: Sequelize.BOOLEAN,
+      allowNull: false
     }
   },
   { timestamps: false }

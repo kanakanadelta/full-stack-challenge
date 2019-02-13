@@ -5,5 +5,9 @@ router
   .route('/allUsers')
   .get(controller.allUsers.get)
 
+router
+  .route('/login/:username')
+  .get(controller.login.get)
+
 
 module.exports = router;

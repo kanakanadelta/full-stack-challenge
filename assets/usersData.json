@@ -4,173 +4,198 @@
   "username": "credgrove0",
   "password": "Khaki",
   "first_name": "Camella",
-  "last_name": "Redgrove"
+  "last_name": "Redgrove",
+  "feedback_auth": true
 }, {
   "id": 2,
   "admin": true,
   "username": "dlashley1",
   "password": "Yellow",
   "first_name": "Demetrius",
-  "last_name": "Lashley"
+  "last_name": "Lashley",
+  "feedback_auth": true
 }, {
   "id": 3,
   "admin": true,
   "username": "tkeitch2",
   "password": "Blue",
   "first_name": "Trudi",
-  "last_name": "Keitch"
+  "last_name": "Keitch",
+  "feedback_auth": true
 }, {
   "id": 4,
   "admin": true,
   "username": "eemons3",
   "password": "Khaki",
   "first_name": "Estella",
-  "last_name": "Emons"
+  "last_name": "Emons",
+  "feedback_auth": true
 }, {
   "id": 5,
   "admin": false,
   "username": "mmillins4",
   "password": "Puce",
   "first_name": "Marietta",
-  "last_name": "Millins"
+  "last_name": "Millins",
+  "feedback_auth": false
 }, {
   "id": 6,
   "admin": false,
   "username": "eashpole5",
   "password": "Pink",
   "first_name": "Elmira",
-  "last_name": "Ashpole"
+  "last_name": "Ashpole",
+  "feedback_auth": false
 }, {
   "id": 7,
   "admin": false,
   "username": "hillingworth6",
   "password": "Indigo",
   "first_name": "Hyacinthia",
-  "last_name": "Illingworth"
+  "last_name": "Illingworth",
+  "feedback_auth": false
 }, {
   "id": 8,
   "admin": false,
   "username": "drepper7",
   "password": "Yellow",
   "first_name": "Desirae",
-  "last_name": "Repper"
+  "last_name": "Repper",
+  "feedback_auth": false
 }, {
   "id": 9,
   "admin": false,
   "username": "ekirkam8",
   "password": "Purple",
   "first_name": "Elvira",
-  "last_name": "Kirkam"
+  "last_name": "Kirkam",
+  "feedback_auth": false
 }, {
   "id": 10,
   "admin": false,
   "username": "osanders9",
   "password": "Turquoise",
   "first_name": "Olivie",
-  "last_name": "Sanders"
+  "last_name": "Sanders",
+  "feedback_auth": false
 }, {
   "id": 11,
   "admin": false,
   "username": "roakwella",
   "password": "Crimson",
   "first_name": "Regine",
-  "last_name": "Oakwell"
+  "last_name": "Oakwell",
+  "feedback_auth": false
 }, {
   "id": 12,
   "admin": false,
   "username": "gcoultardb",
   "password": "Orange",
   "first_name": "Godfree",
-  "last_name": "Coultard"
+  "last_name": "Coultard",
+  "feedback_auth": false
 }, {
   "id": 13,
   "admin": false,
   "username": "gduttc",
   "password": "Violet",
   "first_name": "Goober",
-  "last_name": "Dutt"
+  "last_name": "Dutt",
+  "feedback_auth": false
 }, {
   "id": 14,
   "admin": false,
   "username": "mfolland",
   "password": "Teal",
   "first_name": "Marylin",
-  "last_name": "Follan"
+  "last_name": "Follan",
+  "feedback_auth": false
 }, {
   "id": 15,
   "admin": false,
   "username": "ddeeleye",
   "password": "Aquamarine",
   "first_name": "Dyanne",
-  "last_name": "Deeley"
+  "last_name": "Deeley",
+  "feedback_auth": false
 }, {
   "id": 16,
   "admin": false,
   "username": "ccollissonf",
   "password": "Violet",
   "first_name": "Christa",
-  "last_name": "Collisson"
+  "last_name": "Collisson",
+  "feedback_auth": false
 }, {
   "id": 17,
   "admin": false,
   "username": "sbassilg",
   "password": "Khaki",
   "first_name": "Shirl",
-  "last_name": "Bassil"
+  "last_name": "Bassil",
+  "feedback_auth": false
 }, {
   "id": 18,
   "admin": false,
   "username": "rvallerh",
   "password": "Purple",
   "first_name": "Rhona",
-  "last_name": "Valler"
+  "last_name": "Valler",
+  "feedback_auth": false
 }, {
   "id": 19,
   "admin": false,
   "username": "celeyi",
   "password": "Violet",
   "first_name": "Cordie",
-  "last_name": "Eley"
+  "last_name": "Eley",
+  "feedback_auth": false
 }, {
   "id": 20,
   "admin": false,
   "username": "tingersonj",
   "password": "Goldenrod",
   "first_name": "Townie",
-  "last_name": "Ingerson"
+  "last_name": "Ingerson",
+  "feedback_auth": false
 }, {
   "id": 21,
   "admin": false,
   "username": "crontreek",
   "password": "Turquoise",
   "first_name": "Chiquita",
-  "last_name": "Rontree"
+  "last_name": "Rontree",
+  "feedback_auth": false
 }, {
   "id": 22,
   "admin": false,
   "username": "afriedankl",
   "password": "Violet",
   "first_name": "Addy",
-  "last_name": "Friedank"
+  "last_name": "Friedank",
+  "feedback_auth": false
 }, {
   "id": 23,
   "admin": false,
   "username": "cabsalomm",
   "password": "Pink",
   "first_name": "Cati",
-  "last_name": "Absalom"
+  "last_name": "Absalom",
+  "feedback_auth": false
 }, {
   "id": 24,
   "admin": false,
   "username": "lrudolphn",
   "password": "Aquamarine",
   "first_name": "Lorry",
-  "last_name": "Rudolph"
+  "last_name": "Rudolph",
+  "feedback_auth": false
 }, {
   "id": 25,
   "admin": false,
   "username": "trisebarero",
   "password": "Khaki",
   "first_name": "Terri",
-  "last_name": "Risebarer"
+  "last_name": "Risebarer",
+  "feedback_auth": false
 }]

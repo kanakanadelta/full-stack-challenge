@@ -16,7 +16,8 @@ const insertUsers = (usersData) => {
       username: userData.username,
       password: userData.password,
       first_name: userData.first_name,
-      last_name: userData.last_name
+      last_name: userData.last_name,
+      feedback_auth: userData.feedback_auth
     })
     .then(user => {
       counter++;
