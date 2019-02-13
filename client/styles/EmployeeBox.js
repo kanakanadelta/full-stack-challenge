@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 export default styled.div`
   border: solid 1px #000;
-  margin: 5px;
+  margin-left, margin-right: 5px;
+  margin-bottom: 7.5px;
+  padding: 5px;
 
   .employee-name {
     color: #003366;

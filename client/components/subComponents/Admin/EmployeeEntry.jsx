@@ -19,7 +19,13 @@ const EmployeeEntry = props => {
       <div>
         <div>username:{props.user.username}</div>
         <div>
-          Reviews:
+          <button
+            onClick={()=> {
+              props.changeView(props.user.id-1)
+              console.log(`changing view ${props.user.id}`)
+            }}
+          >View Employee</button>
+          <button>Edit Employee</button>
         </div>
       </div>
     </Container>

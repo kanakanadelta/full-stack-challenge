@@ -78,6 +78,24 @@ module.exports = {
           }
         })
         .catch(err=> res.status(404).send(err));
+    },
+    delete: (req, res) => {
+      const {review_id} = req.query
+      Reviews
+        .destroy({
+          where: {
+            id: review_id
+          }
+        })
+        .then(deleted=> {
+          if (deleted) {
+            res.sendStatus(202).send(deleted);
+            console.log('success');
+          } else {
+            res.status(404).send('error deleting');
+          }
+        })
+        .catch(err=> res.status(404).send(err));
     }
   },
   getOne: {

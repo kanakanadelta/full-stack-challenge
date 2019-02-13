@@ -17,5 +17,6 @@ router
   .route('/review')
   .get(controller.review.get)
   .post(controller.review.post)
+  .delete(controller.review.delete)
 
 module.exports = router;

@@ -12,6 +12,7 @@ class EmployeeDetail extends Component {
     this.submitReview = this.submitReview.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.reviewFetch = this.reviewFetch.bind(this);
+    this.removeReview = this.removeReview.bind(this);
   }
 
   reviewFetch() {
@@ -28,7 +29,8 @@ class EmployeeDetail extends Component {
           loading: false
         }),
         ()=>{
-          console.log('successfully retrieved reviews')
+          console.log('successfully retrieved reviews');
+          this.renderReviews();
         }
       })
       .catch(err=> {
@@ -51,6 +53,12 @@ class EmployeeDetail extends Component {
                 key={review.id}
               >
                 {review.comment} - {users[review.reviewer-1].username}
+                <button>edit</button>
+                <button
+                  onClick={()=> this.removeReview(review.id)}
+                >
+                  delete
+                </button>
               </li>
             )
           })}
@@ -63,7 +71,7 @@ class EmployeeDetail extends Component {
   componentDidMount() {
     this.reviewFetch();
   }
-
+  
   submitReview(e) {
     e.preventDefault();
 
@@ -76,11 +84,24 @@ class EmployeeDetail extends Component {
         comment, user_reviewed, reviewer
       })
       .then(res=> {
+        this.reviewFetch();
         console.log('success: new performance review', res);
       })
-      .catch(err=> {
-        console.log(err);
+      .catch(err=> console.log(err))
+  }
+
+  removeReview(e) {
+
+    let review_id = e;
+
+    Axios
+      .delete('/api/review/', {
+        params: {
+          review_id: review_id
+        }
       })
+      .then(this.reviewFetch())
+      .catch(err => console.log(err))
   }
 
   handleInput(e){
@@ -126,10 +147,15 @@ class EmployeeDetail extends Component {
             >
               <input 
               type="text" 
-              onKeyUp={this.handleInput}/>
+              onKeyUp={this.handleInput}
+              />
             </form>
           </div>
-          <button>New Review</button>
+          <button
+            onClick={(e)=> this.submitReview(e)}
+          >
+            New Review
+          </button>
         </div>
         
       </div>
