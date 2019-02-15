@@ -1,6 +1,21 @@
 # Full Stack Developer Challenge
 This is an design and coding challenge for the role of Full-Stack Developer. Please feel free to fork. Pull Requests will be ignored.
 
+### Set-up steps:
+
+1. Run scripts:
+    a. npm install
+        - install dependencies
+    b. npm run build 
+        -build the bundle for Reactjs
+    c. **change password in database/index.js
+        - string in line 7, if applicable to your PostgreSQL
+    d. npm run db-setup 
+        -establish a connection to PostgreSQL using Sequelize
+    e. npm run db-pop
+        - populate the database using a helper function database/helper.js
+
+
 ## Requirements
 Design a web application that allows employees to submit feedback toward each other's performance review.
 

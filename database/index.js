@@ -1,7 +1,10 @@
 const pg = require('pg');
 const Sequelize = require('sequelize');
 
-const connection = new Sequelize('feedbox', 'postgres', 'Megumi91', {
+const connection = new Sequelize(
+  'feedbox', 
+  'postgres', 
+  '', { //enter your PostgreSQL password if any on string
   dialect: 'postgres'
 });
 
