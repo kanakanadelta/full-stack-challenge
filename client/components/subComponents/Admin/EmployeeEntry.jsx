@@ -25,7 +25,6 @@ const EmployeeEntry = props => {
               console.log(`changing view ${props.user.id}`)
             }}
           >View Employee</button>
-          <button>Edit Employee</button>
         </div>
       </div>
     </Container>

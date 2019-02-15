@@ -132,6 +132,27 @@ module.exports = {
         .catch(err=> {
           res.status(404).send('err updating...', err)
         })
+    },
+    post: (req, res) => {
+      console.log('in POST');
+      console.log('req.body:', req.body);
+      Users
+        .create({
+          admin: false,
+          username: req.body.user.newUsername,
+          password: req.body.user.newPassword,
+          first_name: req.body.user.newFirstName,
+          last_name: req.body.user.newLastName,
+          review_auth: false
+        })
+        .then(review=> {
+          res.status(201).send(review);
+        })
+        .catch(err=> {
+          console.log('error making POST')
+          res.status(404).send(err);
+        })
     }
   }
 }
+

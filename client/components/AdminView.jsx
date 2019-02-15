@@ -4,6 +4,7 @@ import Axios from 'axios';
 // react components
 import EmployeeEntry from './subComponents/Admin/EmployeeEntry';
 import EmployeeDetail from './subComponents/Admin/EmployeeDetail';
+import NewEmployee from './subComponents/Admin/NewEmployee'
 
 class AdminView extends Component {
   constructor(props) {
@@ -96,6 +97,10 @@ class AdminView extends Component {
           {this.renderUsers()}
         </div>
       )
+    } if(this.state.view === "newEmployee") {
+      return (
+        <NewEmployee />
+      )
     } else {
       return (
         <EmployeeDetail 
@@ -113,6 +118,15 @@ class AdminView extends Component {
       <div>
         <div>
           Hello {this.props.currentUser}.
+        </div>
+        <div>
+          <button
+            onClick={()=>{
+              this.changeView('newEmployee')
+            }}
+            >
+            New User
+          </button>
         </div>
         <div>
           <a 

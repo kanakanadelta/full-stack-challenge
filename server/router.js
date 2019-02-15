@@ -9,6 +9,10 @@ router
   .route('/login')
   .get(controller.login.get)
 
+router
+  .route('/user/')
+  .post(controller.getOne.post)
+
 router 
   .route('/user/:id')
   .get(controller.getOne.get)

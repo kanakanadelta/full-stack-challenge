@@ -5,6 +5,7 @@ const connection = new Sequelize('feedbox', 'postgres', 'Megumi91', {
   dialect: 'postgres'
 });
 
+
 connection
   .authenticate()
   .then(() => console.log('Successfully connected to the postgres database.'))
