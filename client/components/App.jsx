@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import Axios from 'axios';
 
 //React Components
 import Login from './Login';
@@ -53,8 +53,8 @@ class App extends Component {
   handleLoginSubmit(e) {
     e.preventDefault();
 
-    axios
-      .get('/api/login/:username', {
+    Axios
+      .get('/api/login/', {
         params: {
           username: this.state.currentUser
         }

@@ -6,12 +6,13 @@ router
   .get(controller.allUsers.get)
 
 router
-  .route('/login/:username')
+  .route('/login')
   .get(controller.login.get)
 
 router 
   .route('/user/:id')
   .get(controller.getOne.get)
+  .patch(controller.getOne.update)
 
 router
   .route('/review')

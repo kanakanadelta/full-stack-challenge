@@ -9,9 +9,10 @@ class AdminView extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      userId: 1, //replace;
       view: 'employees',
       loading: true,
-      users: []
+      users: [],
     }
     this.changeView = this.changeView.bind(this);
   }
@@ -83,6 +84,7 @@ class AdminView extends Component {
       return (
         <EmployeeDetail 
           users={this.state.users}
+          userData={this.state.userData}
           userId={this.state.view}
           changeView={this.changeView}
         />
@@ -102,7 +104,7 @@ class AdminView extends Component {
             cursor: "pointer",
             color: "blue"
           }}
-          onClick={()=>  this.props.logOut()}>
+          onClick={()=>this.props.logOut()}>
             Log Out
           </a>
         </div>

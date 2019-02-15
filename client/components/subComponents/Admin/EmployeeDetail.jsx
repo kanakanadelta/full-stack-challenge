@@ -1,19 +1,59 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
 
+// React Components:
+import EmployeeData from  './EmployeeDetailData';
+import EmployeeUpdate from './EmployeeUpdate';
+
 class EmployeeDetail extends Component {
   constructor(props) {
     super(props);
     this.state ={
+      userData: this.props.users[this.props.userId],
+      userId: this.props.userId,
+      users: this.props.users,
       loading: true,
       newComment: '',
-      reviews: []
+      reviews: [],
+      view: 'detail'
     }
     this.submitReview = this.submitReview.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.reviewFetch = this.reviewFetch.bind(this);
     this.removeReview = this.removeReview.bind(this);
+    this.changeView = this.changeView.bind(this);
+    this.renderReviews = this.renderReviews.bind(this);
   }
+
+  changeView(option) {
+    this.setState({
+      view: option
+    })
+  }
+
+  renderView(option) {
+    if (this.state.view === "userUpdate") {
+      return (
+        <EmployeeUpdate
+          userData={this.state.userData}
+          toggleView={this.changeView}
+        />
+      )
+    } else {
+      return (
+        <EmployeeData 
+          userData={this.state.userData}
+          usersData={this.state.users}
+          userId={this.props.userId}
+          renderReviews={this.renderReviews}
+          handleInput={this.handleInput}
+          submitReview={this.submitReview}
+          toggleView={this.changeView}
+        />
+      )
+    }
+  }
+
 
   reviewFetch() {
     console.log('review fetching...')
@@ -114,50 +154,12 @@ class EmployeeDetail extends Component {
 
   render() {
     return (
-      <div> 
+      <div className="employee-detail-view"> 
         <button onClick={()=>this.props.changeView('employees')}>Employees View</button>
         <br/>
         <br/>
-
-        <div>
-          Viewing detail for {this.props.users[this.props.userId].first_name}. 
-          <button>edit</button>
-          <br/>
-          <br/>
-          Username: {this.props.users[this.props.userId].username}
-          <br/>
-          User Id No.: {this.props.users[this.props.userId].id}
-          <br/>
-          First Name: {this.props.users[this.props.userId].first_name}
-          <br/>
-          Last Name: {this.props.users[this.props.userId].last_name}
-        </div>
+          {this.renderView()}
         <br/>
-        <div>
-          <div>Performance Review:</div>
-          <div>
-            {this.renderReviews()}
-          </div>
-          <br/>
-          <div></div>
-          <div>
-            <form
-              className="review-form"
-              onSubmit={e=> this.submitReview(e)}
-            >
-              <input 
-              type="text" 
-              onKeyUp={this.handleInput}
-              />
-            </form>
-          </div>
-          <button
-            onClick={(e)=> this.submitReview(e)}
-          >
-            New Review
-          </button>
-        </div>
-        
       </div>
     )
   }

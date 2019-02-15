@@ -101,10 +101,11 @@ module.exports = {
   getOne: {
     get: (req, res) => {
       console.log('GET 1 User');
+      const { id } = req.params;
       Users
         .findOne({
           where: {
-            id: req.query.id
+            id: id
           }
         })
         .then((user) => {
@@ -112,8 +113,25 @@ module.exports = {
             console.log(user.first_name, user.last_name)
             res.status(200).send(user)
           } else {
-            res.status(404).send('user retrieval error');
+            res.status(500).send('user retrieval error');
           }
+        })
+    },
+    update: (req, res) => {
+      console.log('in update');
+      Users
+        .update({
+          username: req.body.username,
+          password: req.body.password,
+          // first_name: req.body.first_name,
+          // last_name: req.body.last_name,
+          // review_auth: req.body.review_auth
+        }, {where: {id: 1}})
+        .then(data => {
+          res.status(200).send(data)
+        })
+        .catch(err=> {
+          res.status(404).send('err updating...', err)
         })
     }
   }
