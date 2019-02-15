@@ -118,15 +118,14 @@ module.exports = {
         })
     },
     update: (req, res) => {
-      console.log('in update');
+      console.log('in update', req);
       Users
         .update({
-          username: req.body.username,
-          password: req.body.password,
-          // first_name: req.body.first_name,
-          // last_name: req.body.last_name,
-          // review_auth: req.body.review_auth
-        }, {where: {id: 1}})
+          username: req.body.user.newUsername,
+          password: req.body.user.newPassword,
+          first_name: req.body.user.newFirstName,
+          last_name: req.body.user.newLastName
+        }, {where: {id: req.body.user.id}})
         .then(data => {
           res.status(200).send(data)
         })

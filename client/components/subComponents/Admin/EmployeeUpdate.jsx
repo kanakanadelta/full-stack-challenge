@@ -6,20 +6,23 @@ class EmployeeUpdate extends Component {
     super(props);
 
     this.state ={
-      newUsername: '',
-      newFirstName: '',
-      newLastName: '',
-      newPassword: ''
+      id: this.props.userData.id,
+      newUsername: this.props.userData.username || '',
+      newFirstName: this.props.userData.first_name || '',
+      newLastName: this.props.userData.last_name || '',
+      newPassword: this.props.userData.password || ''
     }
     this.handleUpdateSubmit = this.handleUpdateSubmit.bind(this)
     this.handleUsername = this.handleUsername.bind(this);
     this.handlePassword = this.handlePassword.bind(this)
+    this.handleLastName = this.handleLastName.bind(this);
+    this.handleFirstName = this.handleFirstName.bind(this);
   }
 
   handleUpdateSubmit(e) {
     e.preventDefault();
 
-    let user = this.state.newPassword;
+    let user = this.state;
     Axios
       .patch(`/api/user/${this.props.userData.id}`, {user})
       .then(data=>{
@@ -37,12 +40,27 @@ class EmployeeUpdate extends Component {
     console.log(this.state.newUsername)
   }
 
+  handleFirstName(e) {
+    this.setState({
+      newFirstName: e.target.value
+    })
+    console.log(this.state.newFirstName)
+  }
+
+  handleLastName(e) {
+    this.setState({
+      newLastName: e.target.value
+    })
+    console.log(this.state.newLastName)
+  }
+
   handlePassword(e) {
     this.setState({
       newPassword: e.target.value
     })
     console.log(this.state.newPassword)
   }
+
 
   render() {
     return (
@@ -69,7 +87,7 @@ class EmployeeUpdate extends Component {
             <input 
               type="text" 
               placeholder="New First Name"
-              onKeyUp={this.handleUsername}
+              onKeyUp={this.handleFirstName}
               />
           </div>
           Last Name:
@@ -77,7 +95,7 @@ class EmployeeUpdate extends Component {
             <input 
               type="text" 
               placeholder="New Last Name"
-              onKeyUp={this.handleUsername}
+              onKeyUp={this.handleLastName}
               />
           </div>
           <br/>
@@ -87,6 +105,7 @@ class EmployeeUpdate extends Component {
             <input 
               type="password" 
               placeholder="New Password"
+              required
               onKeyUp={this.handlePassword}
               />
           </div>

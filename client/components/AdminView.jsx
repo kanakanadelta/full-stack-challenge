@@ -36,8 +36,24 @@ class AdminView extends Component {
     Axios
       .get('/api/allUsers')
       .then(({data}) =>{
+        const sortData = (a, b) => {
+          const id1 = a.id;
+          const id2 = b.id;
+          
+          let comparison = 0;
+
+          if (id1 < id2) {
+            comparison = -1;
+          } else if (id1 > id2) {
+            comparison = 1;
+          }
+          return comparison
+        }
+        
+        let sortedData = data.sort(sortData);
+
         this.setState({
-          users: data,
+          users: sortedData,
           loading: false
         }),
         ()=>{
